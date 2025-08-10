@@ -3,10 +3,8 @@ let app = express();
 
 console.log("Hello World"); 
 app.get('/', (req, res) => {
-    res.send("Hello Express");
+    res.send(__dirname + '/views/index.html');
 });
-
-absolutePath = __dirname + '/views/index.html'
 
 
 

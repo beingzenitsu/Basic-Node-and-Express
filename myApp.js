@@ -25,7 +25,7 @@ app.get("/json", (req, res) => {
   res.json({ message });
 });
 
-app.get('/now', (res, req, next) => {
+app.get('/now', (req, res, next) => {
   req.time = new Date().toString();
   next();
   },

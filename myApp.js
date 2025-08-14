@@ -4,6 +4,11 @@ let app = express();
 
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.post('/name', (req, res) => {
+  const {first: firstname, last: lastname} = req.body;
+  res.json({ name: `${firstname} ${lastname}`});
+});
+
 require('dotenv').config();
 
 console.log("Hello World"); 
@@ -44,6 +49,9 @@ app.get('/:word/echo', (req, res) => {
     const {first: firstname, last: lastname} = req.query;
     res.json({ name: `${firstname} ${lastname}`})
   })
+
+  
+
 
   module.exports = app;
 
